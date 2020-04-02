@@ -5,13 +5,11 @@ namespace Banking_Cash_Counter
 {
     class BankingCash
     {
-        private static int employeeMonthlyWage;
         static void Main(string[] args)
         {
             int BALANCE = 5000;
             Queue customers = new Queue();
             
-
             while (true)
             {
                 Console.WriteLine("Welcome to Banking Cash Counter");
@@ -37,15 +35,15 @@ namespace Banking_Cash_Counter
                         if (BALANCE == 0)
                         {
                             //customers.Dequeue(BALANCE);
-                            Console.WriteLine("You have withdraw:"+ withDraw + "You have 0 balance in your account");
+                            Console.WriteLine("You have withdraw:" + withDraw + "You have 0 balance in your account");
                         }
                         else
                         {
                             //customers.Dequeue(BALANCE);
-                            Console.WriteLine("Your Money Has been withdraw:"+ withDraw);
+                            Console.WriteLine("Your Money Has been withdraw:" + withDraw);
                         }
                         break;
-                    
+
                     case 3:
                         Console.WriteLine("Current Balance in Your Account:"+ BALANCE);
                         break;
