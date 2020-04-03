@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Banking_Cash_Counter
 {
-    class BankingCash
+    partial class BankingCash
     {
         //Stack
         class Stack
@@ -22,7 +22,7 @@ namespace Banking_Cash_Counter
             //push customer 
             public void Push(int s)
             {
-                if (Count != stack.Length) 
+                if (Count != stack.Length)
                 {
                     stack[Count++] = s;
                 }
@@ -59,6 +59,65 @@ namespace Banking_Cash_Counter
                 }
             }
         }
+
+        //Linked List 
+        class LinikedList
+        {
+            internal class Node
+            {
+                internal int data;
+                internal Node next;
+                public Node(int d)
+                {
+                    data = d;
+                    next = null;
+                }
+            }
+            internal class SingleLinkedList
+            {
+                internal Node head;
+            }
+            internal void Insert(SingleLinkedList singlyList, int new_data)
+            {
+                Node new_node = new Node(new_data);
+                if (singlyList.head == null)
+                {
+                    singlyList.head = new_node;
+                    return;
+                }
+                Node lastNode = GetLastNode(singlyList);
+                lastNode.next = new_node;
+            }
+
+            internal void Delete(SingleLinkedList singlyList, int key)
+            {
+                Node temp = singlyList.head;
+                Node prev = null;
+                if (temp != null && temp.data == key)
+                {
+                    singlyList.head = temp.next;
+                    return;
+                }
+                while (temp != null && temp.data != key)
+                {
+                    prev = temp;
+                    temp = temp.next;
+                }
+                if (temp == null)
+                {
+                    return;
+                }
+                prev.next = temp.next;
+            }
+
+            private Node GetLastNode(SingleLinkedList singlyList)
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+
+
         static void Main(string[] args)
         {
         //constant
@@ -67,6 +126,7 @@ namespace Banking_Cash_Counter
             //Enqueue and Dequeue
             Queue customers = new Queue();
             Stack s = new Stack();
+            LinkedList list = new LinkedList();
 
             customers.Enqueue(1);
             customers.Enqueue(2);
@@ -83,6 +143,14 @@ namespace Banking_Cash_Counter
             s.Push(5);
             s.Push(6);
             Console.WriteLine("Number of Customers in the Stack:{0}", s.Count);
+
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(3);
+            list.Insert(4);
+            list.Insert(5);
+            list.Insert(6);
+            list.Print();
 
             Console.WriteLine("Welcome to Banking Cash Counter");
             Console.WriteLine("1.Deposit cash");
@@ -118,6 +186,7 @@ namespace Banking_Cash_Counter
                 Console.WriteLine(customers.Dequeue());
                 Console.WriteLine("Number of Customers in the Queue: {0}", customers.Count);
                 Console.WriteLine(s.Pop() + " Popped from stack");
+                list.Delete(1);
             }
         }
     }
