@@ -144,7 +144,7 @@ namespace Banking_Cash_Counter
             s.Push(5);
             s.Push(6);
             Console.WriteLine("Number of Customers in the Stack:{0}", s.Count);
-/*
+
             list.Insert(1);
             list.Insert(2);
             list.Insert(3);
@@ -152,7 +152,8 @@ namespace Banking_Cash_Counter
             list.Insert(5);
             list.Insert(6);
             list.Print();
-            */
+            Console.WriteLine("Number of students: {0}",list.Count);
+
             h.Add(1, "Customer");
             h.Add(2, "Customer");
             h.Add(3, "Customer");
@@ -199,7 +200,7 @@ namespace Banking_Cash_Counter
                     Console.WriteLine(customers.Dequeue());
                     Console.WriteLine("Number of Customers in the Queue: {0}", customers.Count);
                     Console.WriteLine(s.Pop() + " Popped from stack");
-                   // list.Delete(1);
+                    list.Delete(1);
                     h.Remove(1);
                     Console.WriteLine("New list after removing an item: ");
                     foreach (object key in h.Keys)

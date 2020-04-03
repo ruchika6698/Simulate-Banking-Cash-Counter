@@ -4,6 +4,8 @@ namespace Banking_Cash_Counter
 {
     internal class LinkedList
     {
+        public int Count { get; internal set; }
+
         public LinkedList()
         {
         }
