@@ -152,7 +152,7 @@ namespace Banking_Cash_Counter
             list.Insert(5);
             list.Insert(6);
             list.Print();
-            Console.WriteLine("Number of students: {0}",list.Count);
+            Console.WriteLine("Number of students: {0}", list.Count);
 
             h.Add(1, "Customer");
             h.Add(2, "Customer");
