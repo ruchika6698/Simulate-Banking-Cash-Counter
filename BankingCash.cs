@@ -120,13 +120,14 @@ namespace Banking_Cash_Counter
 
         static void Main(string[] args)
         {
-        //constant
+            //constant
             int BALANCE = 5000;
             int M = 3;
             //Enqueue and Dequeue
             Queue customers = new Queue();
             Stack s = new Stack();
             LinkedList list = new LinkedList();
+            Hashtable h = new Hashtable();
 
             customers.Enqueue(1);
             customers.Enqueue(2);
@@ -143,7 +144,7 @@ namespace Banking_Cash_Counter
             s.Push(5);
             s.Push(6);
             Console.WriteLine("Number of Customers in the Stack:{0}", s.Count);
-
+/*
             list.Insert(1);
             list.Insert(2);
             list.Insert(3);
@@ -151,43 +152,61 @@ namespace Banking_Cash_Counter
             list.Insert(5);
             list.Insert(6);
             list.Print();
-
-            Console.WriteLine("Welcome to Banking Cash Counter");
-            Console.WriteLine("1.Deposit cash");
-            Console.WriteLine("2.Withdraw cash");
-            Console.WriteLine("3.Check Balance");
-            Console.WriteLine("Choose the operation You Want to perform:");
-           
-            while (M <= 3)
+            */
+            h.Add(1, "Customer");
+            h.Add(2, "Customer");
+            h.Add(3, "Customer");
+            h.Add(4, "Customer");
+            h.Add(5, "Customer");
+            h.Add(6, "Customer");
+            Console.WriteLine("Initial list:");
+            foreach (var key in h.Keys)
             {
-                int n = Convert.ToInt32(Console.ReadLine());
-                switch (n)
-                {
-                    case 1:
-                        Console.WriteLine("Enter Money to deposit:");
-                        int deposit = Convert.ToInt32(Console.ReadLine());
-                        BALANCE = BALANCE + deposit;
-                        Console.WriteLine("Your Money Has been Successfully Deposit:" + deposit);
-                        Console.WriteLine("Your Current balanced after money deposit:" + BALANCE);
-                        break;
-                    case 2:
-                        Console.WriteLine("Enter Money to Withdraw:");
-                        int withDraw = Convert.ToInt32(Console.ReadLine());
-                        BALANCE = BALANCE - withDraw;
-                        Console.WriteLine("Your Current balanced after money withdraw:" + BALANCE);
-                        break;
-                    case 3:
-                        Console.WriteLine("Current Balance in Your Account:"+ BALANCE);
-                        break;
-                    default:
-                        Console.WriteLine("Exit");
-                        break;
-                }
-                Console.WriteLine(customers.Dequeue());
-                Console.WriteLine("Number of Customers in the Queue: {0}", customers.Count);
-                Console.WriteLine(s.Pop() + " Popped from stack");
-                list.Delete(1);
+                Console.WriteLine("{0},{1}", key, h[key]);
             }
+
+                Console.WriteLine("Welcome to Banking Cash Counter");
+                Console.WriteLine("1.Deposit cash");
+                Console.WriteLine("2.Withdraw cash");
+                Console.WriteLine("3.Check Balance");
+                Console.WriteLine("Choose the operation You Want to perform:");
+
+                while (M <= 3)
+                {
+                    int n = Convert.ToInt32(Console.ReadLine());
+                    switch (n)
+                    {
+                        case 1:
+                            Console.WriteLine("Enter Money to deposit:");
+                            int deposit = Convert.ToInt32(Console.ReadLine());
+                            BALANCE = BALANCE + deposit;
+                            Console.WriteLine("Your Money Has been Successfully Deposit:" + deposit);
+                            Console.WriteLine("Your Current balanced after money deposit:" + BALANCE);
+                            break;
+                        case 2:
+                            Console.WriteLine("Enter Money to Withdraw:");
+                            int withDraw = Convert.ToInt32(Console.ReadLine());
+                            BALANCE = BALANCE - withDraw;
+                            Console.WriteLine("Your Current balanced after money withdraw:" + BALANCE);
+                            break;
+                        case 3:
+                            Console.WriteLine("Current Balance in Your Account:" + BALANCE);
+                            break;
+                        default:
+                            Console.WriteLine("Exit");
+                            break;
+                    }
+                    Console.WriteLine(customers.Dequeue());
+                    Console.WriteLine("Number of Customers in the Queue: {0}", customers.Count);
+                    Console.WriteLine(s.Pop() + " Popped from stack");
+                   // list.Delete(1);
+                    h.Remove(1);
+                    Console.WriteLine("New list after removing an item: ");
+                    foreach (object key in h.Keys)
+                    {
+                        Console.WriteLine("{0},{1}", key, h[key]);
+                    }
+                }
         }
     }
 }
