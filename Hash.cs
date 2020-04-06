@@ -29,7 +29,7 @@ namespace Banking_Cash_Counter
             }
         }
 
-        private const int maxSize = 10;                       //our table size
+        private const int maxSize = 10;
         hashentry[] table;
         public IEnumerable<object> Key { get; internal set; }
         public IEnumerable<object> Keys { get; internal set; }
@@ -117,9 +117,9 @@ namespace Banking_Cash_Counter
         {
             for (int i = 0; i < table.Length; i++)
             {
-                if (table[i] == null && i <= maxSize)                               //if we have null entries
+                if (table[i] == null && i <= maxSize)
                 {
-                    continue;                                                       //dont print them, continue looping
+                    continue;
                 }
                 else
                 {

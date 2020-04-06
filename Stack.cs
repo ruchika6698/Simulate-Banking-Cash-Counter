@@ -4,11 +4,8 @@ using System.Text;
 
 namespace Banking_Cash_Counter
 {
-	/// <summary>
-	///Stack for push and pop Customers
-	/// </summary
 	class Stack
-    {
+	{ 
 		public const int MAX = 1000;
 		int top;
 		/// <summary>

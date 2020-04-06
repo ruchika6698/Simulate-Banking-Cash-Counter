@@ -54,7 +54,7 @@ namespace Banking_Cash_Counter
         /// <summary>
         /// method to delete Customer into list
         /// </summary>
-        public void delete()
+        public void delete(int v)
         {
             head = null;
         }

@@ -107,10 +107,10 @@ namespace Banking_Cash_Counter
                 customers.dequeue();
                 Console.Write("one customer remove from queue\n");
                 Console.WriteLine(s.Pop() + " Popped from stack \n");
-                list.delete();
+                list.delete(1);
                 Console.WriteLine("One Customer removed from list \n");
                 hash.remove(1);
-                Console.WriteLine("One hash table is removed");
+                Console.WriteLine("One Customer removed from hash table");
             }
 
         }

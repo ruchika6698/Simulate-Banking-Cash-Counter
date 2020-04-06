@@ -21,9 +21,6 @@ namespace Banking_Cash_Counter
 		/// </summary
         public void enqueue(int data)
         {
-            /// <summary>
-            /// check queue is full or not  
-            /// </summary
             if (capacity == rear)
             {
                 Console.Write("\nQueue is full\n");
@@ -31,7 +28,7 @@ namespace Banking_Cash_Counter
             }
             else
             {
-                queue[rear] = data;                 // insert element at the rear  
+                queue[rear] = data;
                 rear++;
             }
             return;
@@ -42,27 +39,21 @@ namespace Banking_Cash_Counter
         /// </summary
         public void dequeue()
         {
-            // if queue is empty  
             if (front == rear)
             {
                 Console.Write("\nQueue is empty\n");
                 return;
             }
-
-            // shift all the elements from index 2 till rear  
-            // to the right by one  
             else
             {
                 for (int i = 0; i < rear - 1; i++)
                 {
                     queue[i] = queue[i + 1];
                 }
-
-                // store 0 at rear indicating there's no element  
                 if (rear < capacity)
+                {
                     queue[rear] = 0;
-
-                // decrement rear  
+                }
                 rear--;
             }
             return;
