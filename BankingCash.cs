@@ -34,8 +34,15 @@ namespace Banking_Cash_Counter
            
             for (int i = 1; i <= Customer; i++)
             {
-                Console.Write("Customer {0}: ", i);
-                customerArray[i] = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    Console.Write("Customer {0}: ", i);
+                    customerArray[i] = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Something went wrong.");
+                }
             }
 
             Console.Write("\nNumber of Customers in the row : \n");
