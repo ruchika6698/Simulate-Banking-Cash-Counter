@@ -18,7 +18,7 @@ namespace Banking_Cash_Counter
 
         /// <summary>
 		///function to insert an element & at the rear of the queue  
-		/// </summary
+		/// </summary>
         public void enqueue(int data)
         {
             if (capacity == rear)
@@ -36,7 +36,7 @@ namespace Banking_Cash_Counter
 
         /// <summary>
         ///  function to delete an element & from the front of the queue  
-        /// </summary
+        /// </summary>
         public void dequeue()
         {
             if (front == rear)
@@ -61,7 +61,7 @@ namespace Banking_Cash_Counter
 
         /// <summary>
         /// print queue elements  
-        /// </summary
+        /// </summary>
         public void display()
         {
             int i;

@@ -9,8 +9,8 @@ namespace Banking_Cash_Counter
 		public const int MAX = 1000;
 		int top;
 		/// <summary>
-		///Maximum size of Stack 
-		/// </summary
+		///	Maximum size of Stack 
+		/// </summary>
 		int[] a = new int[MAX];  
 
 		public bool isEmpty()
@@ -19,8 +19,8 @@ namespace Banking_Cash_Counter
 		}
 
 		/// <summary>
-		///Push Customers into stack
-		/// </summary
+		///	Push Customers into stack
+		/// </summary>
 		public bool Push(int x)
 		{
 			if (top >= (MAX - 1))
@@ -37,8 +37,8 @@ namespace Banking_Cash_Counter
 		}
 
 		/// <summary>
-		///remove Customers from stack
-		/// </summary
+		///	remove Customers from stack
+		/// </summary>
 		public int Pop()
 		{
 			if (top < 0)
