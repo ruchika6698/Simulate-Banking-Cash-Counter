@@ -6,4 +6,8 @@
     <RootNamespace>Banking_Cash_Counter</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.Collections.NonGeneric" Version="4.3.0" />
+  </ItemGroup>
+
 </Project>

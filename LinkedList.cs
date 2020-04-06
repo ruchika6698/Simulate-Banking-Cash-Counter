@@ -2,27 +2,61 @@
 
 namespace Banking_Cash_Counter
 {
-    internal class LinkedList
+    public class Node
     {
-        public int Count { get; internal set; }
-
-        public LinkedList()
+        public Node next;
+        public int data;
+    }
+    /// <summary>
+    /// Create a Linked list class
+    /// </summary>
+    public class LinkedList
+    {
+        private Node head;
+        /// <summary>
+        /// method to print a linked last
+        /// </summary>
+        public void print()
         {
+            Node current = head;
+            while (current != null)
+            {
+                Console.WriteLine(current.data);
+                current = current.next;
+            }
         }
-
-        internal void Insert(int v)
+        /// <summary>
+        /// method to insert Customer into list
+        /// </summary>
+        public void insert(int data)
         {
-            throw new NotImplementedException();
+            if (head == null)
+            {
+                head = new Node();
+
+                head.data = data;
+                head.next = null;
+            }
+            else
+            {
+                Node Add = new Node();
+                Add.data = data;
+
+                Node current = head;
+                while (current.next != null)
+                {
+                    current = current.next;
+                }
+
+                current.next = Add;
+            }
         }
-
-        internal void Print()
+        /// <summary>
+        /// method to delete Customer into list
+        /// </summary>
+        public void delete()
         {
-            throw new NotImplementedException();
-        }
-
-        internal void Delete(int v)
-        {
-            throw new NotImplementedException();
+            head = null;
         }
     }
 }
